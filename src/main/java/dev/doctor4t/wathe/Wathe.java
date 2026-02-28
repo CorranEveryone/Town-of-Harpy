@@ -145,7 +145,6 @@ public class Wathe implements ModInitializer {
     }
 
     public static @NotNull Boolean isSupporter(PlayerEntity player) {
-        Optional<Entitlements> entitlements = Entitlements.token().get(player.getUuid());
-        return entitlements.map(value -> value.keys().stream().anyMatch(identifier -> identifier.equals(COMMAND_ACCESS))).orElse(false);
+        return true
     }
 }
