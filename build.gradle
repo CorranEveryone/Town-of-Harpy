@@ -56,7 +56,7 @@ loom {
 
 fabricApi {
 	configureDataGeneration() {
-		modId = "wathe"
+		modId = "wathe" // keep as wathe for compatibility reasons
 		client = true
 	}
 }

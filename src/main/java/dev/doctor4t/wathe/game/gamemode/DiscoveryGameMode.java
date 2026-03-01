@@ -29,6 +29,14 @@ public class DiscoveryGameMode extends GameMode {
         // stop game if ran out of time
         if (!GameTimeComponent.KEY.get(serverWorld).hasTime())
             GameFunctions.stopGame(serverWorld);
+
+        // check if last person standing in loose end
+        int playersLeft = 0;
+        for (PlayerEntity player : serverWorld.getPlayers()) {
+            if (GameFunctions.isPlayerAliveAndSurvival(player)) {
+                playersLeft++;
+            }
+        }
         if (playersLeft <= 0) {
             GameFunctions.stopGame(serverWorld);
         }
